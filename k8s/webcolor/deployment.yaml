@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webpage
 spec:
-  replicas: 40
+  replicas: 1
   selector:
     matchLabels:
       app: webpage
@@ -17,7 +17,7 @@ spec:
         image: fabricioveronez/pagina-exemplo:blue
         ports:
         - containerPort: 80
-        resources
+        resources:
           requests:
             cpu: 300m
             memory: 256Mi
