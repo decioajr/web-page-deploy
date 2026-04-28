@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webpage
+  name: webcolor
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: webpage
+      app: webcolor
   template:
     metadata:
       labels:
-        app: webpage
+        app: webcolor
     spec:
       containers:
       - name: webpage
-        image: fabricioveronez/pagina-exemplo:blue
+        image: fabricioveronez/webcolor:blue
         ports:
         - containerPort: 80
         resources:
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webpage
+  name: webcolor
 spec:
   selector:
-    app: webpage
+    app: webcolor
   ports:
   - port: 80
     targetPort: 80
