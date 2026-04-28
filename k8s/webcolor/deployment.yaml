@@ -36,3 +36,15 @@ spec:
   - port: 80
     targetPort: 80
   type: NodePort
+ ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webpage2
+spec:
+  selector:
+    app: webpage
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort 
